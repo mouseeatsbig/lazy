@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft Developer Resume</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #1a1a1a;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(#444 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: -1;
+      animation: moveBackground 20s linear infinite;
+    }
+    @keyframes moveBackground {
+      0% { background-position: 0 0; }
+      100% { background-position: 40px 40px; }
+    }
+    .container {
+      max-width: 600px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .typed-text {
+      font-size: 1.2em;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="container">
+    <h1>Lazy / lazyistaken</h1>
+    <div class="typed-text" id="typedText"></div>
+  </div>
+
+  <script>
+    const text = `Hey, I'm Lazy (lazyistaken). I'm a developer experienced in Skript.
+I used to be a network owner of RascalPvP and have worked as a developer on many other smaller servers.
+
+I'm skilled in custom server mechanics, player engagement systems, rank setups, and Discord integrations.
+My focus is creating smooth, balanced gameplay experiences with lightweight, optimized Skript code.
+
+I've collaborated with many server owners to bring their vision to life — from PvP minigames to full server systems.`;
+
+    let i = 0;
+    const speed = 30;
+
+    function typeText() {
+      if (i < text.length) {
+        document.getElementById("typedText").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeText, speed);
+      }
+    }
+
+    window.onload = typeText;
+  </script>
+</body>
+</html>
